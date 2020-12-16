@@ -27,7 +27,7 @@
                 <a class="nav-link dropdown-toggle" id="navbarAuthMenuLink" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">{{ user.name }}</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarAuthMenuLink">
-                  <router-link class="dropdown-item" to="products/create">Profile</router-link>
+                  <router-link class="dropdown-item" :to="{name: 'profile'}">My Profile</router-link>
                   <a style="cursor: pointer;" type="button" class="dropdown-item" @click.prevent='logout()'>Logout</a>
                 </div>
               </li>

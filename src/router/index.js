@@ -3,6 +3,7 @@ import store from '@/store'
 import VueRouter from 'vue-router'
 import home from '../views/Home.vue'
 import login from '../views/auth/login.vue'
+import profile from '../views/auth/profile.vue'
 import register from '../views/auth/register.vue'
 import editProduct from '../views/products/edit.vue'
 import productCreate from '../views/products/create.vue'
@@ -25,6 +26,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: login
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: profile
   },
   {
     path: '/products',
