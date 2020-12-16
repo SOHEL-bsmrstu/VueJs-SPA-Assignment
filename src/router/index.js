@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import home from '../views/Home.vue'
 import login from '../views/auth/login.vue'
 import register from '../views/auth/register.vue'
+import editProduct from '../views/products/edit.vue'
 import productCreate from '../views/products/create.vue'
 import productManage from '../views/products/manage.vue'
 
@@ -38,8 +39,20 @@ const routes = [
   },
   {
     path: '/products/create',
-    name: 'products-create',
+    name: 'create-product',
     component: productCreate,
+    beforeEnter: (to, form, next) => {
+      if (!store.getters['Auth/authenticated']) {
+        return next({ path: 'login' })
+      }
+      next()
+    }
+  },
+  {
+    path: '/products/:productId/edit',
+    name: 'edit-product',
+    component: editProduct,
+    props: true,
     beforeEnter: (to, form, next) => {
       if (!store.getters['Auth/authenticated']) {
         return next({ path: 'login' })

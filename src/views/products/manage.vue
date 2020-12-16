@@ -30,7 +30,7 @@
                   <td class="cell100 column4 text-left">{{ truncate(product.description, 15) }}</td>
                   <td class="cell100 column4 text-left">{{ product.created_at }}</td>
                   <td class="cell100 column5 text-right text-center">
-                    <router-link class="btn btn-primary btn-circle btn-sm" :to="'products/' + product.id +'/edit'"><i class="fa fa-pencil text-white"></i></router-link>
+                    <router-link class="btn btn-primary btn-circle btn-sm" :to="{name: 'edit-product', params:{productId: product.id}}"><i class="fa fa-pencil text-white"></i></router-link>
                     <button class="btn btn-danger btn-circle btn-sm" type="button" @click="deleteData(product.id)"><i class="fa fa-trash"></i></button>
                   </td>
                 </tr>

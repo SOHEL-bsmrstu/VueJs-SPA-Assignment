@@ -2,8 +2,8 @@
   <div class="signup-form">
     <form @submit.prevent="submitForm">
       <div class="form-header">
-        <h2>Create A Product</h2>
-        <p>Fill out this form to create a product!</p>
+        <h2>Edit A Product</h2>
+        <p>Fill out this form to edit a product!</p>
       </div>
       <div class="form-group">
         <input type="text" class="form-control" required placeholder="Enter product title" v-model="form.title">
@@ -15,11 +15,11 @@
         <textarea class="form-control" required placeholder="Enter product description" v-model='form.description'></textarea>
       </div>
       <div class="form-group">
-        <input type="file" class="form-control" required @change="handleProductImageUpload($event)">
+        <input type="file" class="form-control" @change="handleProductImageUpload($event)">
       </div>
       <div class="form-group">
         <button type="button" class="btn btn-sm btn-secondary text-left" :disabled="!isChanged" @click="resetForm">Clear</button>
-        <button type="submit" class="btn btn-primary btn-sm text-right" :disabled="isUnfilled">Create</button>
+        <button type="submit" class="btn btn-primary btn-sm text-right" :disabled="isUnfilled">Edit</button>
       </div>
     </form>
   </div>
@@ -27,11 +27,17 @@
 <script>
 
 export default {
-  name: 'product-create',
+  name: 'edit-product',
+  props: {
+    productId: {
+      required: true
+    }
+  },
   data: function () {
     return {
       isChanged: false,
       isUnfilled: true,
+      product: null,
       form: this.initialForm()
     }
   },
@@ -41,9 +47,23 @@ export default {
       handler: function () {
         this.formChanged()
       }
+    },
+    product: {
+      deep: true,
+      handler: function () {
+        this.setFormDefaultData()
+      }
     }
   },
   methods: {
+    fetchProductDetails: function () {
+      let path = 'products/' + this.productId + '/edit'
+      this.request('get', path, null, (response) => {
+        if (response.success) {
+          this.product = response.product
+        }
+      })
+    },
     /**
      * @param event
      * @return void
@@ -55,16 +75,18 @@ export default {
      * @return void
      */
     submitForm: async function () {
+      if (this.empty(this.product)) return
+
       let data = new FormData()
       data.append('title', this.form.title)
       data.append('price', this.form.price)
       data.append('image', this.form.image)
       data.append('description', this.form.description)
 
-      this.request('post', 'products/create', data, (response) => {
+      this.request('post', 'products/' + this.productId + '/update', data, (response) => {
         if (response.success) {
           this.$router.push({ name: 'products' })
-          this.notify().success('Yay! You are successfully create a product')
+          this.notify().success('Yay! You are successfully updated a product')
         } else {
           this.notify().error('Oops! Something went wrong')
         }
@@ -79,7 +101,7 @@ export default {
       let form = Object.entries(this.form)
       // eslint-disable-next-line no-unused-vars
       for (let [name, value] of form) {
-        if (this.empty(value)) {
+        if (this.empty(value) && name !== 'image') {
           this.isUnfilled = true
           break
         }
@@ -93,6 +115,7 @@ export default {
       this.isChanged = false
       this.isUnfilled = true
       this.form = this.initialForm()
+      this.setFormDefaultData()
     },
     /**
      *
@@ -105,7 +128,20 @@ export default {
         image: null,
         description: null
       }
+    },
+    /**
+     * @return void
+     */
+    setFormDefaultData: function () {
+      this.form = {
+        title: this.product.title,
+        price: this.product.price,
+        description: this.product.description
+      }
     }
+  },
+  mounted: function () {
+    this.fetchProductDetails()
   }
 }
 </script>

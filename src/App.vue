@@ -19,7 +19,7 @@
                 <a class="nav-link dropdown-toggle" id="navbarProductsMenuLink" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">Products</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarProductsMenuLink">
-                  <router-link class="dropdown-item" :to="{ name:'products-create'}">Create</router-link>
+                  <router-link class="dropdown-item" :to="{ name:'create-product'}">Create</router-link>
                   <router-link class="dropdown-item" :to="{name: 'products'}">Manage</router-link>
                 </div>
               </li>
