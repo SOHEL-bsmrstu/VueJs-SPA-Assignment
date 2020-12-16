@@ -5,6 +5,7 @@ import home from '../views/Home.vue'
 import login from '../views/auth/login.vue'
 import register from '../views/auth/register.vue'
 import productCreate from '../views/products/create.vue'
+import productManage from '../views/products/manage.vue'
 
 Vue.use(VueRouter)
 
@@ -27,7 +28,7 @@ const routes = [
   {
     path: '/products',
     name: 'products',
-    component: home,
+    component: productManage,
     beforeEnter: (to, form, next) => {
       if (!store.getters['Auth/authenticated']) {
         return next({ path: 'login' })

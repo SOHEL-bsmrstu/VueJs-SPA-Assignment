@@ -66,7 +66,7 @@ export default {
 
       this.request('post', 'products/create', data, (response) => {
         if (response.success) {
-          this.$router.push('products')
+          this.$router.push('/')
           this.notify().success('Yay! You are successfully create a product')
         } else {
           this.notify().error('Oops! Something went wrong')
@@ -83,7 +83,6 @@ export default {
       // eslint-disable-next-line no-unused-vars
       for (let [name, value] of form) {
         if (this.empty(value)) {
-          console.log(name)
           this.isUnfilled = true
           break
         }

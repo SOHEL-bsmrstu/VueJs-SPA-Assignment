@@ -12,15 +12,15 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <router-link class="nav-link" to="/">Home</router-link>
+              <router-link class="nav-link" :to="{name:'home'}">Home</router-link>
             </li>
             <template v-if="authenticated">
               <li class="nav-item dropdown" style="cursor: pointer;">
                 <a class="nav-link dropdown-toggle" id="navbarProductsMenuLink" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">Products</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarProductsMenuLink">
-                  <router-link class="dropdown-item" to="products/create">Create</router-link>
-                  <router-link class="dropdown-item" to="products">Manage</router-link>
+                  <router-link class="dropdown-item" :to="{ name:'products-create'}">Create</router-link>
+                  <router-link class="dropdown-item" :to="{name: 'products'}">Manage</router-link>
                 </div>
               </li>
               <li class="nav-item dropdown" style="cursor: pointer;">
@@ -34,10 +34,10 @@
             </template>
             <template v-else>
               <li class="nav-item">
-                <router-link class="nav-link" to="/register">Register</router-link>
+                <router-link class="nav-link" :to="{name:'register'}">Register</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/login">Login</router-link>
+                <router-link class="nav-link" :to="{name:'login'}">Login</router-link>
               </li>
             </template>
           </ul>

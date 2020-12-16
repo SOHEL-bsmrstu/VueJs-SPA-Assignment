@@ -1,0 +1,352 @@
+.kt-pagination {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.kt-pagination .kt-pagination__links, .kt-pagination .kt-pagination__links li a {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.kt-pagination .kt-pagination__links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.kt-pagination .kt-pagination__links li {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-right: 0.5rem;
+    border-radius: 4px;
+}
+
+.kt-pagination .kt-pagination__links li a {
+    font-weight: 500;
+    color: #74788d;
+    font-size: 1rem;
+    padding: 0 0.2rem;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 30px;
+    min-height: 30px;
+    margin: 0;
+}
+
+.kt-pagination .kt-pagination__links .kt-pagination__link--active a {
+    color: #ffffff;
+}
+
+.kt-pagination .kt-pagination__toolbar {
+    margin: 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0;
+}
+
+.kt-pagination .kt-pagination__toolbar .form-control {
+    padding: 0;
+    margin-right: 10px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1;
+    outline: none;
+    border: none;
+}
+
+.kt-pagination .kt-pagination__toolbar .pagination__desc {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    font-weight: 500;
+    color: #74788d;
+}
+
+.kt-pagination.kt-pagination--brand .kt-pagination__links .kt-pagination__link--first, .kt-pagination.kt-pagination--brand .kt-pagination__links .kt-pagination__link--next, .kt-pagination.kt-pagination--brand .kt-pagination__links .kt-pagination__link--prev, .kt-pagination.kt-pagination--brand .kt-pagination__links .kt-pagination__link--last {
+    background: rgba(93, 120, 255, 0.1);
+}
+
+.kt-pagination.kt-pagination--brand .kt-pagination__links .kt-pagination__link--active {
+    background: #5d78ff;
+}
+
+.kt-pagination.kt-pagination--brand .kt-pagination__links li:hover {
+    background: #5d78ff;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.kt-pagination.kt-pagination--brand .kt-pagination__links li:hover a {
+    color: #ffffff;
+}
+
+.kt-pagination.kt-pagination--brand .kt-pagination__links li:hover a i {
+    color: #fff !important;
+}
+
+.kt-pagination.kt-pagination--brand .kt-pagination__toolbar .form-control {
+    background: rgba(93, 120, 255, 0.1);
+}
+
+.kt-pagination.kt-pagination--light .kt-pagination__links .kt-pagination__link--first, .kt-pagination.kt-pagination--light .kt-pagination__links .kt-pagination__link--next, .kt-pagination.kt-pagination--light .kt-pagination__links .kt-pagination__link--prev, .kt-pagination.kt-pagination--light .kt-pagination__links .kt-pagination__link--last {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.kt-pagination.kt-pagination--light .kt-pagination__links .kt-pagination__link--active {
+    background: #ffffff;
+}
+
+.kt-pagination.kt-pagination--light .kt-pagination__links li:hover {
+    background: #ffffff;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.kt-pagination.kt-pagination--light .kt-pagination__links li:hover a {
+    color: #ffffff;
+}
+
+.kt-pagination.kt-pagination--light .kt-pagination__links li:hover a i {
+    color: #fff !important;
+}
+
+.kt-pagination.kt-pagination--light .kt-pagination__toolbar .form-control {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.kt-pagination.kt-pagination--dark .kt-pagination__links .kt-pagination__link--first, .kt-pagination.kt-pagination--dark .kt-pagination__links .kt-pagination__link--next, .kt-pagination.kt-pagination--dark .kt-pagination__links .kt-pagination__link--prev, .kt-pagination.kt-pagination--dark .kt-pagination__links .kt-pagination__link--last {
+    background: rgba(40, 42, 60, 0.1);
+}
+
+.kt-pagination.kt-pagination--dark .kt-pagination__links .kt-pagination__link--active {
+    background: #282a3c;
+}
+
+.kt-pagination.kt-pagination--dark .kt-pagination__links li:hover {
+    background: #282a3c;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.kt-pagination.kt-pagination--dark .kt-pagination__links li:hover a {
+    color: #ffffff;
+}
+
+.kt-pagination.kt-pagination--dark .kt-pagination__links li:hover a i {
+    color: #fff !important;
+}
+
+.kt-pagination.kt-pagination--dark .kt-pagination__toolbar .form-control {
+    background: rgba(40, 42, 60, 0.1);
+}
+
+.kt-pagination.kt-pagination--primary .kt-pagination__links .kt-pagination__link--first, .kt-pagination.kt-pagination--primary .kt-pagination__links .kt-pagination__link--next, .kt-pagination.kt-pagination--primary .kt-pagination__links .kt-pagination__link--prev, .kt-pagination.kt-pagination--primary .kt-pagination__links .kt-pagination__link--last {
+    background: rgba(88, 103, 221, 0.1);
+}
+
+.kt-pagination.kt-pagination--primary .kt-pagination__links .kt-pagination__link--active {
+    background: #5867dd;
+}
+
+.kt-pagination.kt-pagination--primary .kt-pagination__links li:hover {
+    background: #5867dd;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.kt-pagination.kt-pagination--primary .kt-pagination__links li:hover a {
+    color: #ffffff;
+}
+
+.kt-pagination.kt-pagination--primary .kt-pagination__links li:hover a i {
+    color: #fff !important;
+}
+
+.kt-pagination.kt-pagination--primary .kt-pagination__toolbar .form-control {
+    background: rgba(88, 103, 221, 0.1);
+}
+
+.kt-pagination.kt-pagination--success .kt-pagination__links .kt-pagination__link--first, .kt-pagination.kt-pagination--success .kt-pagination__links .kt-pagination__link--next, .kt-pagination.kt-pagination--success .kt-pagination__links .kt-pagination__link--prev, .kt-pagination.kt-pagination--success .kt-pagination__links .kt-pagination__link--last {
+    background: rgba(10, 187, 135, 0.1);
+}
+
+.kt-pagination.kt-pagination--success .kt-pagination__links .kt-pagination__link--active {
+    background: #0abb87;
+}
+
+.kt-pagination.kt-pagination--success .kt-pagination__links li:hover {
+    background: #0abb87;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.kt-pagination.kt-pagination--success .kt-pagination__links li:hover a {
+    color: #ffffff;
+}
+
+.kt-pagination.kt-pagination--success .kt-pagination__links li:hover a i {
+    color: #fff !important;
+}
+
+.kt-pagination.kt-pagination--success .kt-pagination__toolbar .form-control {
+    background: rgba(10, 187, 135, 0.1);
+}
+
+.kt-pagination.kt-pagination--info .kt-pagination__links .kt-pagination__link--first, .kt-pagination.kt-pagination--info .kt-pagination__links .kt-pagination__link--next, .kt-pagination.kt-pagination--info .kt-pagination__links .kt-pagination__link--prev, .kt-pagination.kt-pagination--info .kt-pagination__links .kt-pagination__link--last {
+    background: rgba(85, 120, 235, 0.1);
+}
+
+.kt-pagination.kt-pagination--info .kt-pagination__links .kt-pagination__link--active {
+    background: #5578eb;
+}
+
+.kt-pagination.kt-pagination--info .kt-pagination__links li:hover {
+    background: #5578eb;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.kt-pagination.kt-pagination--info .kt-pagination__links li:hover a {
+    color: #ffffff;
+}
+
+.kt-pagination.kt-pagination--info .kt-pagination__links li:hover a i {
+    color: #fff !important;
+}
+
+.kt-pagination.kt-pagination--info .kt-pagination__toolbar .form-control {
+    background: rgba(85, 120, 235, 0.1);
+}
+
+.kt-pagination.kt-pagination--warning .kt-pagination__links .kt-pagination__link--first, .kt-pagination.kt-pagination--warning .kt-pagination__links .kt-pagination__link--next, .kt-pagination.kt-pagination--warning .kt-pagination__links .kt-pagination__link--prev, .kt-pagination.kt-pagination--warning .kt-pagination__links .kt-pagination__link--last {
+    background: rgba(255, 184, 34, 0.1);
+}
+
+.kt-pagination.kt-pagination--warning .kt-pagination__links .kt-pagination__link--active {
+    background: #ffb822;
+}
+
+.kt-pagination.kt-pagination--warning .kt-pagination__links li:hover {
+    background: #ffb822;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.kt-pagination.kt-pagination--warning .kt-pagination__links li:hover a {
+    color: #ffffff;
+}
+
+.kt-pagination.kt-pagination--warning .kt-pagination__links li:hover a i {
+    color: #fff !important;
+}
+
+.kt-pagination.kt-pagination--warning .kt-pagination__toolbar .form-control {
+    background: rgba(255, 184, 34, 0.1);
+}
+
+.kt-pagination.kt-pagination--danger .kt-pagination__links .kt-pagination__link--first, .kt-pagination.kt-pagination--danger .kt-pagination__links .kt-pagination__link--next, .kt-pagination.kt-pagination--danger .kt-pagination__links .kt-pagination__link--prev, .kt-pagination.kt-pagination--danger .kt-pagination__links .kt-pagination__link--last {
+    background: rgba(253, 57, 122, 0.1);
+}
+
+.kt-pagination.kt-pagination--danger .kt-pagination__links .kt-pagination__link--active {
+    background: #fd397a;
+}
+
+.kt-pagination.kt-pagination--danger .kt-pagination__links li:hover {
+    background: #fd397a;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.kt-pagination.kt-pagination--danger .kt-pagination__links li:hover a {
+    color: #ffffff;
+}
+
+.kt-pagination.kt-pagination--danger .kt-pagination__links li:hover a i {
+    color: #fff !important;
+}
+
+.kt-pagination.kt-pagination--danger .kt-pagination__toolbar .form-control {
+    background: rgba(253, 57, 122, 0.1);
+}
+
+.kt-pagination.kt-pagination--circle .kt-pagination__links li {
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+}
+
+.kt-pagination.kt-pagination--lg .kt-pagination__links li a {
+    font-size: 1.3rem;
+    min-width: 35px;
+    min-height: 35px;
+}
+
+.kt-pagination.kt-pagination--lg .kt-pagination__toolbar .form-control {
+    height: 35px;
+    font-size: 1.2rem;
+    padding: 0.2rem 0 0.2rem 0.2rem;
+}
+
+.kt-pagination.kt-pagination--sm .kt-pagination__links li a {
+    font-size: 1rem;
+    min-width: 25px;
+    min-height: 25px;
+}
+
+.kt-pagination.kt-pagination--sm .kt-pagination__toolbar .form-control {
+    height: 25px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .kt-pagination .kt-pagination__links {
+        display: -webkit-box;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .kt-pagination .kt-pagination__links li {
+        margin: 0.3rem 0.5rem 0.3rem 0;
+    }
+
+    .kt-pagination .kt-pagination__links li a {
+        font-size: 0.9rem;
+        min-width: 25px;
+        min-height: 25px;
+    }
+
+    .kt-pagination .kt-pagination__toolbar .form-control {
+        height: 25px;
+        font-size: 0.9rem;
+        padding: 0.2rem 0 0.2rem 0.2rem;
+    }
+}
+
+.align-items-center {
+    display: flex;
+    justify-content: space-between;
+}
