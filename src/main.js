@@ -6,6 +6,7 @@ import './helpers/mixins'
 
 import 'jquery/src/jquery.js'
 import './assets/css/style.css'
+import 'toastr/build/toastr.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 

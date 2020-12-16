@@ -51,6 +51,7 @@ export default {
     submitForm: async function () {
       this.request('post', 'register', this.form, (response) => {
         if (response.success) {
+          this.$router.push('login')
           this.notify().success('Yay! You are successfully registered')
         } else {
           this.notify().error('Oops! Something went wrong')

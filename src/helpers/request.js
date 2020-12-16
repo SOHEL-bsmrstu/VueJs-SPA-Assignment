@@ -43,7 +43,7 @@ export default {
       let unknownError = true
 
       // Handle unauthorized request
-      if (error.response && error.response.status === 401) {
+      if (error.response && (error.response.status === 401 || error.response.status === 403)) {
         unknownError = false
         toastr.error('This action is unauthorized.')
       }
@@ -57,7 +57,7 @@ export default {
       // Handle validation related errors
       if (error.response && error.response.status === 422) {
         let messages = []
-        let validationErrors = error.response.data.errors
+        let validationErrors = error.response.data
         for (let field in validationErrors) {
           messages.push(validationErrors[field])
         }
