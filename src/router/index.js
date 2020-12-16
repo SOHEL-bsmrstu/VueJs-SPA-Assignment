@@ -1,20 +1,38 @@
 import Vue from 'vue'
+import store from '@/store'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Register from '../views/Register.vue'
+import home from '../views/Home.vue'
+import login from '../views/auth/login.vue'
+import register from '../views/auth/register.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'home',
+    component: home
   },
   {
     path: '/register',
-    name: 'Register',
-    component: Register
+    name: 'register',
+    component: register
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: login
+  },
+  {
+    path: '/products',
+    name: 'products',
+    component: home,
+    beforeEnter: (to, form, next) => {
+      if (!store.getters['Auth/authenticated']) {
+        return next({ path: 'login' })
+      }
+      next()
+    }
   }
 ]
 

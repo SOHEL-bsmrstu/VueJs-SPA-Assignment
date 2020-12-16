@@ -14,15 +14,19 @@
             <li class="nav-item active">
               <router-link class="nav-link" to="/">Home</router-link>
             </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/register">Register</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/login">Login</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/logout">Logout</router-link>
-            </li>
+            <template v-if="authenticated">
+              <li class="nav-item">
+                <a style="cursor: pointer;" type="button" class="nav-link" @click.prevent='logout()'>Logout</a>
+              </li>
+            </template>
+            <template v-else>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/register">Register</router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/login">Login</router-link>
+              </li>
+            </template>
           </ul>
         </div>
       </div>
@@ -30,3 +34,24 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+import {mapActions, mapGetters} from 'vuex'
+
+export default {
+  computed: {
+    ...mapGetters({
+      user: 'Auth/user',
+      authenticated: 'Auth/authenticated'
+    })
+  },
+  methods: {
+    ...mapActions({
+      logoutAction: 'Auth/logout'
+    }),
+    logout: function () {
+      this.logoutAction()
+    }
+  }
+}
+</script>

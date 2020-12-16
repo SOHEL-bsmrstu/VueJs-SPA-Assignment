@@ -22,13 +22,15 @@
         <button type="submit" class="btn btn-primary btn-sm text-right" :disabled="isUnfilled">Register</button>
       </div>
     </form>
-    <div class="text-center small">Already have an account? <a href="#">Login here</a></div>
+    <div class="text-center small">Already have an account?
+      <router-link to="login">Login here</router-link>
+    </div>
   </div>
 </template>
 <script>
 
 export default {
-  name: 'Register',
+  name: 'register',
   data: function () {
     return {
       isChanged: false,

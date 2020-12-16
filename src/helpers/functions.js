@@ -1,6 +1,4 @@
 /* eslint-disable */
-import toastr from './toastr'
-import empty from 'locutus/php/var/empty'
 import is_bool from 'locutus/php/var/is_bool'
 import in_array from 'locutus/php/array/in_array'
 import filter from 'locutus/php/array/array_filter'
@@ -33,30 +31,6 @@ export default {
     }
   },
   methods: {
-    /**
-     * Determine whether a variable is empty
-     *
-     * @param mixedVar
-     * @return {boolean}
-     */
-    empty: function (mixedVar) {
-      if (mixedVar instanceof File) {
-        return this.empty(mixedVar.name)
-      }
-
-      return empty(mixedVar)
-    },
-
-    /**
-     * Determine whether a variable is not empty
-     *
-     * @param mixedVar
-     * @return {boolean}
-     */
-    notEmpty: function (mixedVar) {
-      return !empty(mixedVar)
-    },
-
     /**
      * Finds out whether a variable is a boolean
      *
@@ -123,14 +97,5 @@ export default {
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
     },
-
-    /**
-     * Toastr wrapper
-     *
-     * @return toastr
-     */
-    notify: function () {
-      return toastr
-    }
   }
 }

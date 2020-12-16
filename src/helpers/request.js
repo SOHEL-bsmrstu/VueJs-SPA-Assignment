@@ -1,5 +1,6 @@
 import axios from 'axios'
 import toastr from 'toastr'
+import empty from 'locutus/php/var/empty'
 
 // Set default axios values
 axios.defaults.baseURL = 'http://localhost:8000/api'
@@ -138,7 +139,6 @@ export default {
           'Content-Type': 'multipart/form-data'
         }
       }
-
       return config
     },
 
@@ -155,6 +155,36 @@ export default {
       }
 
       return true
+    },
+    /**
+     * Determine whether a variable is empty
+     *
+     * @param mixedVar
+     * @return {boolean}
+     */
+    empty: function (mixedVar) {
+      if (mixedVar instanceof File) {
+        return this.empty(mixedVar.name)
+      }
+
+      return empty(mixedVar)
+    },
+    /**
+     * Determine whether a variable is not empty
+     *
+     * @param mixedVar
+     * @return {boolean}
+     */
+    notEmpty: function (mixedVar) {
+      return !empty(mixedVar)
+    },
+    /**
+     * Toastr wrapper
+     *
+     * @return toastr
+     */
+    notify: function () {
+      return toastr
     }
   }
 }
