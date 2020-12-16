@@ -13,7 +13,7 @@
       </div>
       <div class="form-group">
         <button type="button" class="btn btn-sm btn-secondary text-left" :disabled="!isChanged" @click="resetForm">Clear</button>
-        <button type="submit" class="btn btn-primary btn-sm text-right" :disabled="isUnfilled">Register</button>
+        <button type="submit" class="btn btn-primary btn-sm text-right" :disabled="isUnfilled">Login</button>
       </div>
     </form>
     <div class="text-center small">Don't have an account?
@@ -77,12 +77,12 @@ export default {
     },
     /**
      *
-     * @return {{password: string, email: string}}
+     * @return {{password: null, email: null}}
      */
     initialForm: function () {
       return {
-        email: 'rana37351@gmail.com',
-        password: '11223344'
+        email: null,
+        password: null
       }
     }
   }

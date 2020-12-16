@@ -15,8 +15,21 @@
               <router-link class="nav-link" to="/">Home</router-link>
             </li>
             <template v-if="authenticated">
-              <li class="nav-item">
-                <a style="cursor: pointer;" type="button" class="nav-link" @click.prevent='logout()'>Logout</a>
+              <li class="nav-item dropdown" style="cursor: pointer;">
+                <a class="nav-link dropdown-toggle" id="navbarProductsMenuLink" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Products</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarProductsMenuLink">
+                  <router-link class="dropdown-item" to="products/create">Create</router-link>
+                  <router-link class="dropdown-item" to="products">Manage</router-link>
+                </div>
+              </li>
+              <li class="nav-item dropdown" style="cursor: pointer;">
+                <a class="nav-link dropdown-toggle" id="navbarAuthMenuLink" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">{{ user.name }}</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarAuthMenuLink">
+                  <router-link class="dropdown-item" to="products/create">Profile</router-link>
+                  <a style="cursor: pointer;" type="button" class="dropdown-item" @click.prevent='logout()'>Logout</a>
+                </div>
               </li>
             </template>
             <template v-else>
