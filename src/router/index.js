@@ -8,6 +8,7 @@ import register from '../views/auth/register.vue'
 import editProduct from '../views/products/edit.vue'
 import productCreate from '../views/products/create.vue'
 import productManage from '../views/products/manage.vue'
+import pathNotFound from '../views/404.vue'
 
 Vue.use(VueRouter)
 
@@ -65,6 +66,10 @@ const routes = [
       }
       next()
     }
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: pathNotFound
   }
 ]
 
