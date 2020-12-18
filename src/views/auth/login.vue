@@ -3,7 +3,7 @@
     <form @submit.prevent="submitForm">
       <div class="form-header">
         <h2>Sign In</h2>
-        <p>Fill out this form to login in!</p>
+        <p>Fill out this form to authenticated in!</p>
       </div>
       <div class="form-group">
         <input type="email" class="form-control" name="email" required="required" placeholder="Enter your email" v-model="form.email">

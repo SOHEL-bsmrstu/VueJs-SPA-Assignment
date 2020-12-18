@@ -77,7 +77,7 @@ export default {
       logoutAction: 'Auth/logout'
     }),
     logout: function () {
-      this.logoutAction()
+      this.logoutAction(this.$router.currentRoute.path)
     }
   }
 }

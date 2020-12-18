@@ -23,7 +23,7 @@
       </div>
     </form>
     <div class="text-center small">Already have an account?
-      <router-link to="login">Login here</router-link>
+      <router-link to="authenticated">Login here</router-link>
     </div>
   </div>
 </template>
